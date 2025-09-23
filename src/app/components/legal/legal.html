@@ -1,0 +1,27 @@
+<footer class="bg-black row">
+  <div [@fadeInRight]>
+    <a routerLink="/"><img width="50" src="icon.png" alt="" class="m-2 rounded" /></a>
+    <h1  class="text-light">{{ title() }}</h1>
+    
+  </div>
+
+  <div [@listStagger]  class="mainjl mx-5">
+    <div 
+      
+      *ngFor="let contact of contacts"
+      class="text-center"
+    >
+      <a
+        target="_blank"
+        class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+        [href]="contact[1]"
+        >{{ contact[0] }}</a
+      >
+      <p class="text-light small">
+        <small>{{ contact[2] }}</small>
+      </p>
+    </div>
+  </div>
+
+  <!-- <button class="btn btn-primary" (click)="toggle()">Mostrar/Ocultar</button> -->
+</footer>
