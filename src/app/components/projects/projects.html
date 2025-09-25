@@ -1,0 +1,32 @@
+<main class="">
+  <app-head></app-head>
+
+  <div class="container-fluid mainjl d-flex justify-content-center align-items-center mainjl">
+    <div class="d-block text-center text-light">
+      <h3 [@fadeInDown] class="col text-center py-4">{{ title() }}</h3>
+      <div [@listStagger] class="small text-center">
+        <div *ngFor="let project of projects; let i = index" class="">
+          <hr class="" />
+          <div class="">
+            <a
+              class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+              [href]="project[1]"
+              target="_blank"
+            >
+              {{ project[0] }}
+            </a>
+          </div>
+          <div class="text-light">****</div>
+          <div class="">
+            <small
+              ><small>
+                <p class="text-light p-0 m-0">{{ project[2] }}</p>
+              </small></small
+            >
+          </div>
+        </div>
+        <hr class="" />
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,27 +1,31 @@
 <footer class="bg-black row">
-  <div [@fadeInRight]>
-    <a routerLink="/"><img width="50" src="icon.png" alt="" class="m-2 rounded" /></a>
-    <h1  class="text-light">{{ title() }}</h1>
-    
-  </div>
+ <app-head></app-head>
 
-  <div [@listStagger]  class="mainjl mx-5">
-    <div 
-      
-      *ngFor="let contact of contacts"
-      class="text-center"
+  <div [@listStagger] class="mainjl mx-5 d-block  text-center" >
+   
+
+    <div
+      *ngFor="let project of contacts; let i = index"
+      class=""
     >
-      <a
-        target="_blank"
-        class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-        [href]="contact[1]"
-        >{{ contact[0] }}</a
-      >
-      <p class="text-light small">
-        <small>{{ contact[2] }}</small>
-      </p>
+      <hr class="text-white" />
+      <div class="">
+        <a
+          class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+          [href]="project[1]"
+          target="_blank"
+        >
+          {{ project[0] }}
+        </a>
+      </div>
+      <div class="text-light">****</div>
+      <div class="">
+        <small
+          ><small>
+            <p class="text-light p-0 m-0">{{ project[2] }}</p>
+          </small></small
+        >
+      </div>
     </div>
   </div>
-
-  <!-- <button class="btn btn-primary" (click)="toggle()">Mostrar/Ocultar</button> -->
 </footer>

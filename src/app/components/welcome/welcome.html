@@ -1,48 +1,26 @@
-<div id="" class="bg-black ">
-  <div id="" class="d-flex justify-content-center align-items-center mainjl">
-    <div class="d-block text-center text-light" id="" 
-    
-    >
-      <h1  [@fadeInUp]>{{ projectName() }}</h1>
-      <p [@fadeInLeft] id="dataprojectsubTitle">{{ projectSubt() }}</p>
-      <p [@fadeInRight]>
-        <small
-          ><a
-            routerLink="contactme"
-            class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-            >Contact me</a
-          ></small
-        >
-      </p>
-    </div>
-  </div>
-  
-
-  <div  [@listStagger] class="small d-flex flex-wrap justify-content-around px-3 text-center pb-5  ">
-
-    <div 
-    *ngFor="let project of projects; let i = index" 
-    class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-1 ">
-      <hr class="text-white" />
-      <div class="">
-        <a
-          class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-          [href]="project[1]"
-          target="_blank"
-        >
-          {{ project[0] }}
-        </a>
+<app-video-home-page>
+  <div class="d-flex justify-content-center align-items-center mainjl2" id="">
+    <div class="d-block text-center text-light">
+      <div>
+        <h1 [@fadeInDown] class="">{{ personalOwn.nameOwn }}</h1>
+        <p [@fadeInLeft] class="">{{ personalOwn.profession }}</p>
+        <p [@fadeInRight] class="pb-5">{{ personalOwn.label }}</p>
       </div>
-      <div class="text-light">****</div>
-      <div class="">
-        <small
-          ><small>
-            <p class="text-light p-0 m-0">{{ project[2] }}</p>
-          </small></small
-        >
+      <hr class="" />
+      <div [@listStagger]>
+        <div *ngFor="let route of appRoutes">
+          <p>
+            <small
+              ><a
+                routerLink="{{ route.path }}"
+                class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                >{{ route.title }}</a
+              ></small
+            >
+          </p>
+          <hr class="" />
+        </div>
       </div>
     </div>
-
-    
   </div>
-</div>
+</app-video-home-page>

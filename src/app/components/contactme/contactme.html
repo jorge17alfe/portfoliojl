@@ -1,24 +1,20 @@
-<div id="" class=" bg-black py-5">
-  <div class="">
-    <a routerLink=""><img width="25" src="icon.png" alt="" class="m-2 rounded" /></a>
-    <a routerLink="/legal">Legal</a> 
-  </div>
-  <div class="container d-flex justify-content-center align-items-center mainjl">
-    <div [@listStagger] class="text-center">
-      <h2 class="col text-light">Contact me by:</h2>
-      <div 
-      *ngFor="let contact of contacts" class="col">
-        <a
+<main id="" class="">
+  <app-head></app-head>
+  <div class="container-fluid d-flex justify-content-center align-items-center mainjl">
+    <div class="d-block text-center text-light">
+      <h3 [@fadeInDown] class="col text-light pb-5">{{title()}} by:</h3>
+      <div [@listStagger] class="text-center">
+        <hr class="" />
+        <div *ngFor="let contact of contactMe" class="col">
+          <a
           target="_blank"
           class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
           [href]="contact[1]"
           >{{ contact[0] }}</a
-        >
-       
+          >
+          <hr class="" />
+         </div>
       </div>
- 
     </div>
   </div>
-
- 
-</div>
+</main>

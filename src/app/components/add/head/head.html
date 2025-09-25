@@ -1,0 +1,10 @@
+<div [@fadeInLeft] class="d-flex justify-content-end py-2">
+  <div *ngFor="let route of appRoutes">
+    <a
+      routerLink="/{{ route.path }}"
+      class="small link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover pe-3"
+      >{{ route.title }}</a
+    >
+  </div>
+  <a routerLink="" class="pe-3"><img width="25" src="icon.png" alt="" class="rounded" /></a>
+</div>

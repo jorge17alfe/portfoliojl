@@ -1,0 +1,82 @@
+<main>
+  <app-head></app-head>
+
+  <div class="container-fluid mainjl">
+    <div class="text-light container">
+      <h3 [@fadeInDown] class="col text-center py-5">{{ title() }}</h3>
+      <div class="row">
+        <figure
+          class="text-center col-12 col-md-6 d-flex align-items-center justify-content-center"
+        >
+          <div>
+            <img [@fadeInLeft] src="photo.png" alt="Jorge Ordóñez" class="rounded mb-3" />
+            <figcaption [@fadeInRight]>{{ personalOwn.nameOwn }}</figcaption>
+            <div [@fadeInUp]>
+              <small> {{ personalOwn.profession }}</small>
+              <br />
+              <small> {{ personalOwn.label }}</small>
+            </div>
+          </div>
+        </figure>
+        <div [@fadeInUp] class="col-12 col-md-6 d-flex align-items-center justify-content-center m">
+          <div style="text-align: justify" class="py-4">
+            <p class="mb-4 leading-relaxed">
+              Hi! I’m <span class="font-semibold">{{ personalOwn.nameOwn }}</span
+              >, a developer experienced in building web applications and solutions from scratch,
+              combining frontend and backend in a professional way.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+              I work with <strong>PHP</strong> (native and Laravel), <strong>Node.js</strong> using
+              <strong>Handlebars</strong> as a view engine, <strong>JavaScript</strong>,
+              <strong>jQuery</strong>, and <strong>MySQL</strong>. On the frontend side, I use
+              <strong>Angular</strong> for my current portfolio project
+              <a href="https://alocraise.com" class="fst-italic fw-bold fs-5" style="color: var(--color_second)" target="_blank">alocraise.com</a>
+               and I’ve also started exploring <strong>React</strong>. I also enjoy working with REST
+              API integrations.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+              Among my projects, I highlight
+              <a
+                href="https://micartaonline.alocraise.com"
+                target="_blank"
+                class="fst-italic fw-bold fs-5"
+                style="color: var(--color_second)"
+                >MiCartaOnline</a
+              >, a fullstack app built entirely from scratch using PHP, JS, jQuery and MySQL. I’ve also
+              developed <strong>WordPress plugins</strong>, where I integrated the
+              <strong>ChatGPT API</strong> to generate dynamic content, connected with another
+              plugin that used the <strong>Amazon Affiliates API</strong>, creating a powerful
+              workflow for automation and monetization.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+              I’m constantly learning and passionate about exploring new technologies. My goal is to
+              keep growing as a fullstack developer, delivering creative, functional, and impactful
+              solutions.
+            </p>
+
+            <!-- Skills -->
+            <div class="">
+              <h4 class="fw-bold mb-2">Technologies & Tools</h4>
+              <ul class="list-disc list-inside text-gray-700 grid grid-cols-2 gap-2">
+                <li>PHP (Native & Laravel)</li>
+                <li>Node.js & Handlebars</li>
+                <li>JavaScript & jQuery</li>
+                <li>Angular (Portfolio project)</li>
+                <li>React (beginner)</li>
+                <li>HTML & CSS</li>
+                <li>MySQL</li>
+                <li>WordPress & Plugins</li>
+                <li>ChatGPT API</li>
+                <li>Amazon Affiliates API</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

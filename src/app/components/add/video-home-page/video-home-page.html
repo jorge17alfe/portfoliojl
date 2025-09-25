@@ -1,0 +1,15 @@
+<main id="video-background" class="">
+  <video autoplay muted loop playsinline #bgVideo id="bg-video">
+    <source src="jlom.mp4" type="video/mp4" />
+  </video>
+
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+
+  <audio autoplay loop muted #player>
+    <source src="CodeCoffee.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button (click)="activeSound(player)">🔊 Activar sonido</button>
+</main>

@@ -12,43 +12,15 @@
     --color_textos: #01012dd5;
     --color_fondo: rgba(96, 113, 190, 0.102);
     --letra_londrina: "Londrina Shadow", cursive;
-}
-
-
-
-body {
-    /* background-color: #fff;*/
-   color: var(--color_primary); 
-   
+    --bg_portfolio : #ced4da;
 }
 
 
 
 
-.mainjl {
-    height: 84vh;
-}
-
-@media (max-width: 995px) {
-    .mainjl {
-        height: 79vh;
-    }
-}
-
-@media (max-width: 766px) {
-    .mainjl {
-        height: 75vh;
-    }
-}
-
-@media (max-width: 575px) {
-    .mainjl {
-        height: 70vh;
-    }
-}
-
-@media (max-width: 420px) {
-    .mainjl {
-        height: 40vh;
-    }
-}
+  .container-fluid.mainjl {
+    height: auto !important;   /* ya no forzamos vh */
+    min-height: 100dvh;   
+      background-color: #000000;      /* opcional: asegura que al menos cubra viewport visible */
+  }
+  

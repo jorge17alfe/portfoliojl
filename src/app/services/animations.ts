@@ -1,46 +1,62 @@
 import { query, stagger, trigger, transition, style, animate, animation, useAnimation } from '@angular/animations';
 
-// Animación básica fade + slide up
+
+/**
+ * Animación genérica fade + slide
+ * Parametrizable con eje (X/Y), distancia, duración y delay
+ */
+export const fadeIn = animation(
+  [
+    style({ opacity: 0, transform: 'translate{{axis}}({{distance}})' }),
+    animate(
+      '{{duration}}ms {{delay}}ms ease-out',
+      style({ opacity: 1, transform: 'translate{{axis}}(0)' })
+    )
+  ],
+  {
+    // valores por defecto
+    params: {
+      axis: 'Y',       // 'X' o 'Y'
+      distance: '50px', // desplazamiento inicial
+      duration: 600,    // duración en ms
+      delay: 0          // delay en ms
+    }
+  }
+);
+
+/**
+ * Triggers listos para usar con direcciones específicas
+ */
 export const fadeInUpTrigger = trigger('fadeInUp', [
   transition(':enter', [
-    style({ opacity: 0, transform: 'translateY(-320px)' }),
-    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+    useAnimation(fadeIn, {
+      params: { axis: 'Y', distance: '550px', duration: 800 }
+    })
   ])
 ]);
 
-
-// Animación parametrizada para stagger
-export const fadeInUp = animation([
-  style({ opacity: 0, transform: 'translateY(-300px)' }),
-  animate('{{duration}}ms {{delay}}ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+export const fadeInDownTrigger = trigger('fadeInDown', [
+  transition(':enter', [
+    useAnimation(fadeIn, {
+      params: { axis: 'Y', distance: '-550px', duration: 1200 }
+    })
+  ])
 ]);
-
- //desde Right
 
 export const fadeInLeftTrigger = trigger('fadeInLeft', [
   transition(':enter', [
-    style({ opacity: 0, transform: 'translateX(-500px)' }),
-    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+    useAnimation(fadeIn, {
+      params: { axis: 'X', distance: '-550px', duration: 800 }
+    })
   ])
 ]);
-
-
-export const fadeInLeft = animation([
-  style({ opacity: 0, transform: 'translateX(-500x)' }),
-  animate('{{duration}}ms {{delay}}ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
-]);
-////desde Left
 
 export const fadeInRightTrigger = trigger('fadeInRight', [
   transition(':enter', [
-    style({ opacity: 0, transform: 'translateX(500px)' }),
-    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+    useAnimation(fadeIn, {
+      params: { axis: 'X', distance: '550px', duration: 800 }
+    })
   ])
-]);
-
-export const fadeInRight = animation([
-  style({ opacity: 0, transform: 'translateX(500px)' }),
-  animate('{{duration}}ms {{delay}}ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
 ]);
 
 
@@ -70,7 +86,7 @@ export const listStaggerTrigger = trigger('listStagger', [
       [
         stagger(300, [
           useAnimation(fadeInUp1, {
-            params: { distance: '-850px', duration: 600 }
+            params: { distance: '-550px', duration: 600 }
           })
         ])
       ],
